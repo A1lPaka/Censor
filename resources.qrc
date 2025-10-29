@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+  <qresource prefix="/">
+    <!-- Темы QSS -->
+    <file>assets/CensorDarkStyle.qss</file>
+    <file>assets/CensorLightStyle.qss</file>
+    <file>assets/check_dark.svg</file>
+    <file>assets/uncheck_dark.svg</file>
+    <file>assets/check_light.svg</file>
+    <file>assets/uncheck_light.svg</file>
+  </qresource>
+</RCC>

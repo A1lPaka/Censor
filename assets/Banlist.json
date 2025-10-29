@@ -1,0 +1,78 @@
+{
+  "russian_default": {
+    "ban_roots": [
+      "хуй","хуе","хуё","хуя","хули","хуи","хую",
+      "блят","бляд","блед","бляя",
+      "пизд","пезд","пёзд","пизж",
+	  "пидр","педр","пидор","пидар","педор","педар",
+	  "педик","гомос",
+      "шлюх","шлюш",
+      "гандон","гондон",
+      "муда","муди","муде","мудо","залуп","дроч","манд",
+      "еби","ёби","ебал","ёба","ебат","еба","ебн","ёбн","ебу","ёбу","ебы","ёбы",
+      "ебл","ёбл","епт","ёпт","ебо","ёбо","ебош","ебе","ёбе","ебя","ёбя"
+    ],
+    "ban_words": ["еб","ёб","бля","нах","пох","монда"],
+    "exception_roots": [
+      "колеб","хулига","оманд","аманд","мандар","мондар","учеб",
+      "учёб","мандат","педро","бледн","мандр","мандол","мудан",
+      "дебил","дебют","мебел","хлеб","себас","лебед","дебат",
+      "греб","требу","зебу","ребят","ребён","ребен","бляст","теб"
+    ],
+    "exception_words": ["педро"]
+  },
+  "english_default": {
+    "ban_roots": [
+      "fuck","fuk","fok","phuck",
+      "shit","shyt","shite",
+      "asshol","arsehol","assclown","assface","asshat",
+      "bitch","bich",
+      "dick","dik",
+      "cunt","kunt",
+      "piss",
+      "cock","cok",
+      "twat","twot",
+      "prick","prik",
+      "bastard","bastad",
+      "wank",
+      "fag","nigg","boner",
+      "slut","cumshot","cumdump","cumstain","cum-st","cumm"
+    ],
+    "ban_words": [
+      "crap","bullshit","ass","arse","skank",
+      "bitch","douche","suck","thot",
+      "screw","turd","whore","jerk","jerkoff","circle-jerk",
+	  "cum","kum","cumed","cuming"
+    ],
+    "exception_roots": [
+      "class","pass","glass","grass","brass",
+      "assist","assume","asset","mass","assess",
+      "dickens","dickson","dickinson",
+      "cocktail","cocker","cockpit",
+      "damnation","damask",
+      "piston","pistil",
+      "kunta","kuntry","assoc","cass",
+      "snigg","niggard"
+    ],
+    "exception_words": [
+      "dickens","cocktail","coke","damnation",
+	  "pistachio","jerky","fagus","fokker","cumin",
+	  "peacock","cockatoo","weathercock","cum laude",
+	  "jerk chicken", "jerk-chicken","scunthorpe"
+    ]
+  },
+  "german_default": {
+    "ban_roots": [
+	  "fick","fotz","scheiss","scheiß","wichs",
+	  "hure","schlamp","muschi","schwanz","pimmel",
+	  "arsch","kack","piss","wix"
+	],
+	"ban_words": [
+	],
+	"exception_roots": [
+	  "arschitekt", "arschitektur", "marsch"
+	],
+	"exception_words": [
+	]
+  }
+}

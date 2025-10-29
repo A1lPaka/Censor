@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 20 20">
+  <!-- внешний квадрат -->
+  <rect x="2.5" y="2.5" width="15" height="15" fill="none" stroke="#2f2f2f" stroke-width="2" stroke-linejoin="round" rx="2" ry="2"></rect>
+  <!-- внутренний квадрат -->
+  <rect x="5.5" y="5.5" width="9" height="9" fill="#2f2f2f" rx="0.7" ry="0.7"></rect>
+</svg>
