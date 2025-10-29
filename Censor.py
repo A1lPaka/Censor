@@ -558,6 +558,8 @@ class MainWindow(*what_is_MainWindow):
         self.search_popup.search_edit.textChanged.connect(lambda: self._search_text_timer1.start(150))
         self.search_popup.search_edit.textChanged.connect(lambda: self._return_start_index())
 
+        self.dialog = CensorSetting(self)
+
         self.text_edit.setFocus()
 # =================================================== Функции для работы с приложением ===============================================
     def _create_checkbox_with_holder(self, text: str) -> QWidget:
@@ -1218,6 +1220,9 @@ class MainWindow(*what_is_MainWindow):
 
         if not self._censsetting_is_open:
             self.open_banwords_table()  # Открываем окно настроек цензуры для просмотра/редактирования
+        else:
+            self.dialog.model.fill_table(*self.all_current_banlists)
+            self.dialog._was_import(True)
 
         self.all_rx_banlists = _make_regex(ban_roots, ban_words, exc_roots, exc_words)
         self._disable_ban_word_highlight()
@@ -1250,9 +1255,19 @@ class MainWindow(*what_is_MainWindow):
         
         try:
             if file_path.lower().endswith(".txt"):
-                _upload_censorship_txt(file_path, *self.all_current_banlists)
+                if self._censsetting_is_open:
+                    br, bw, er, ew = self.dialog.model.get_new_listes()
+                    self.dialog._was_import(False)
+                    _upload_censorship_txt(file_path, br, bw, er, ew)
+                else:
+                    _upload_censorship_txt(file_path, *self.all_current_banlists)
             elif file_path.lower().endswith(".csv"):
-                _upload_censorship_csv(file_path, *self.all_current_banlists)
+                if self._censsetting_is_open:
+                    br, bw, er, ew = self.dialog.model.get_new_listes()
+                    self.dialog._was_import(False)
+                    _upload_censorship_csv(file_path, br, bw, er, ew)
+                else:
+                    _upload_censorship_csv(file_path, *self.all_current_banlists)
         except Exception as error:
             QMessageBox.critical(self, self.tr("Ошибка записи"), self.tr("Не удалось сохранить файл:\n%1").replace("%1", str(error)))
             return
@@ -1260,19 +1275,18 @@ class MainWindow(*what_is_MainWindow):
         self.settings.setValue("last_open_directory", os.path.dirname(file_path))
 
     def open_banwords_table(self):
-        dialog = CensorSetting(self)
         self._censsetting_is_open = True
-        dialog._change_color(0 if self._current_theme == "Dark" else 1)
-        dialog.standart_ban_roots = self.standart_ban_roots
-        dialog.standart_ban_words = self.standart_ban_words
-        dialog.standart_exceptions_roots = self.standart_exceptions_roots
-        dialog.standart_exceptions_words = self.standart_exceptions_words
-        dialog.model.fill_table(*self.all_current_banlists)
+        self.dialog._change_color(0 if self._current_theme == "Dark" else 1)
+        self.dialog.standart_ban_roots = self.standart_ban_roots
+        self.dialog.standart_ban_words = self.standart_ban_words
+        self.dialog.standart_exceptions_roots = self.standart_exceptions_roots
+        self.dialog.standart_exceptions_words = self.standart_exceptions_words
+        self.dialog.model.fill_table(*self.all_current_banlists)
 
-        dialog.import_action.triggered.connect(self.import_ban_list)
-        dialog.export_action.triggered.connect(self.export_ban_list)
-        if dialog.exec() == QDialog.Accepted:
-            self.all_current_banlists = dialog.model.get_new_listes()
+        self.dialog.import_action.triggered.connect(self.import_ban_list)
+        self.dialog.export_action.triggered.connect(self.export_ban_list)
+        if self.dialog.exec() == QDialog.Accepted:
+            self.all_current_banlists = self.dialog.model.get_new_listes()
             self.all_rx_banlists = _make_regex(*self.all_current_banlists)
             self._disable_ban_word_highlight()
             self._spans = []

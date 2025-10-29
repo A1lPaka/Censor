@@ -206,6 +206,7 @@ class CensorSetting(QDialog):
         self.standart_ban_words = []
         self.standart_exceptions_roots = []
         self.standart_exceptions_words = []
+        self._was_imp = False
 # =========================================================================
         dialog_layout = QVBoxLayout(self)
         dialog_layout.setContentsMargins(0, 0, 0, 0)
@@ -344,16 +345,22 @@ class CensorSetting(QDialog):
             self.close()
 
     def closeEvent(self, event):
-        reply = WarningMessage(self)
-        reply.setTextFormat(Qt.RichText)
-        reply.setNewWindowTitle(self.tr("Отменить изменения?"))
-        reply.setNewText(self.tr("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Все изменения будут потеряны.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Продолжить?</span>"))
-        reply.exec()
-        if reply.clickedButton() == reply.ok_button:
-            self.reject()
-            self.close()
+        if not self._was_imp:
+            reply = WarningMessage(self)
+            reply.setTextFormat(Qt.RichText)
+            reply.setNewWindowTitle(self.tr("Отменить изменения?"))
+            reply.setNewText(self.tr("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Все изменения будут потеряны.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Продолжить?</span>"))
+            reply.exec()
+            if reply.clickedButton() == reply.ok_button:
+                self.reject()
+                self.close()
+            else:
+                event.ignore()
         else:
-            event.ignore()
+            self._was_imp = False
+
+    def _was_import(self, flag):
+        self._was_imp = flag
 
     def save_opt(self):
         self.accept()
