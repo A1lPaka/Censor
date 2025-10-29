@@ -1483,6 +1483,7 @@ class MainWindow(*what_is_MainWindow):
         self.modified_label.setText(self.tr("Сохранён"))
 
         self.search_popup._retranslate_ui()
+        self.dialog = CensorSetting(self)
 
         self._update_encoding_button_text()
         self._update_eol_button_text()
