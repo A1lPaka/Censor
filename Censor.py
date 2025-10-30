@@ -559,6 +559,8 @@ class MainWindow(*what_is_MainWindow):
         self.search_popup.search_edit.textChanged.connect(lambda: self._return_start_index())
 
         self.dialog = CensorSetting(self)
+        self.dialog.import_action.triggered.connect(self.import_ban_list)
+        self.dialog.export_action.triggered.connect(self.export_ban_list)
 
         self.text_edit.setFocus()
 # =================================================== Функции для работы с приложением ===============================================
@@ -1283,8 +1285,6 @@ class MainWindow(*what_is_MainWindow):
         self.dialog.standart_exceptions_words = self.standart_exceptions_words
         self.dialog.model.fill_table(*self.all_current_banlists)
 
-        self.dialog.import_action.triggered.connect(self.import_ban_list)
-        self.dialog.export_action.triggered.connect(self.export_ban_list)
         if self.dialog.exec() == QDialog.Accepted:
             self.all_current_banlists = self.dialog.model.get_new_listes()
             self.all_rx_banlists = _make_regex(*self.all_current_banlists)
