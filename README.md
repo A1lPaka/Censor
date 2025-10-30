@@ -144,7 +144,15 @@ and allows you to quickly apply censorship — either by masking with asterisks 
 
 ## Screenshots
 
-*(maybe later)*
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/059f6d17-52cb-4d0b-b4e2-6dc49aae5cd7" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b1ea90e9-70a2-4099-b599-6df5138cf982" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/c23da91b-1b9c-46ac-a08e-615f0aa0a8d6" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/f1e360d3-866b-49b5-9882-649c82e7579b" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/769c5746-058b-4236-9201-66c0f2e7e164" />
 
 ---
 
