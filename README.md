@@ -46,7 +46,7 @@
 
 ## Скриншоты
 
-*(здесь позже можно добавить изображения интерфейса: тёмная и светлая тема, окно цензуры)*
+*(возможно позже)*
 
 ---
 
@@ -136,7 +136,7 @@ and allows you to quickly apply censorship — either by masking with asterisks 
 
 ## Screenshots
 
-*(Interface screenshots will be added later: dark and light themes, censorship window, etc.)*
+*(maybe later)*
 
 ---
 
