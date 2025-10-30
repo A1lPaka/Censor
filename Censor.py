@@ -1074,6 +1074,10 @@ class MainWindow(*what_is_MainWindow):
 
     def _normalization_after_open(self):
         self._disable_ban_word_highlight()
+        self._spans = []
+        self._spans_count = 0
+        self._spans_for_cens = []
+        self._was_cens_check = False
         self._update_encoding_button_text()
         self._update_eol_button_text()
         self._update_words_count_label()
