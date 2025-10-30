@@ -46,7 +46,15 @@
 
 ## Скриншоты
 
-*(возможно позже)*
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/cfcdcdea-df10-472e-8c5a-79947231e991" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/fc437e16-0d8b-4cca-b356-799ac8b272db" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/76a9bc5e-81bb-49a5-b5a5-3df799696070" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/e9c9705b-ddf3-4947-9034-5cfeb203a7cb" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/971d4766-0673-437e-a53d-0812a177920d" />
 
 ---
 
